@@ -1,28 +1,29 @@
 ---
-description: Builds or refreshes an interactive dashboard showing all applications, their progress, fit scores, and latest contact. Use when the user wants an overview of their applications or to navigate between them. Renders as a Live Artifact in Cowork.
+description: Builds or refreshes a dashboard showing all applications, their status, progress, fit scores, and latest contact. Use when the user wants an overview of their applications or to navigate between them.
 ---
 
 # Laboramus — Dashboard
 
-Give the user one place to see and navigate everything. Built as a **Live Artifact** (a persistent, interactive HTML page in Cowork's sidebar that reads local files, so it reflects the current state).
+Give the user one place to see everything. **Primary form: a self-contained `dashboard.html`** written into the `Laboramus/` root — regenerated from the files on every run ("refresh the dashboard" = re-read the sources, rewrite the file). Present the file to the user after writing it.
 
 ## Data sources (read the whole workspace)
+`status.json` fields are defined in `../../references/status-schema.md` — parse exactly those.
 - `profile/candidate-profile.md` → profile status (built? how many skills? last updated).
-- `applications/*/status.json` → per application: display name, which steps are done (employer / role / fit / letter / interview), fit score, dates.
+- `applications/*/status.json` → display name, `applicationStatus` (preparing/applied/interview/offer/rejected/withdrawn), `steps` done, `fitScore`, dates.
 - `applications/*/notes.md` → latest contact date + next step.
 - `companies/*/` → which companies have cached analyses.
 
 ## What to render
-A single dashboard with:
+A single page:
 - **Profile** card: status + last update.
-- **Applications** list/table: display name · company · fit score · a progress row (employer ✓/—, role ✓/—, fit ✓/—, letter ✓/—, interview ✓/—) · latest contact + next step from notes.
-- **Drill-down**: clicking an application surfaces its artifacts (analyses, strategy brief, cover letter, interview prep, notes).
-- Sort applications by date (newest first); show fit score prominently.
+- **Applications** table: display name · company · **applicationStatus** (color-coded) · fit score · progress row (employer ✓/—, role ✓/—, fit ✓/—, letter ✓/—, interview ✓/—) · latest contact + next step from notes.
+- Sort by `updatedAt` (newest first); show fit score and status prominently.
+- Per application, list the file names of its artifacts (analyses, strategy brief, cover letter, interview prep, notes) so the user knows what exists and where.
 
-## How to build it
-Ask Claude (Cowork) to create this as a **Live Artifact** so it persists in the sidebar and refreshes from the local files. Build the HTML from the data sources above. On a later run, refresh it (re-read the files, update the view).
+Self-contained HTML: inline CSS, no external scripts, no network calls — it must render offline from the file system.
 
-> ⚠️ Verify at first use: programmatic creation/refresh of a Live Artifact from a skill is the one piece not yet confirmed in docs. If it isn't possible, fall back to writing a `dashboard.html` (or `dashboard.md`) into the `Laboramus/` root that the user opens directly, and tell the user that's what you did.
+## Optional: Live Artifact
+If the environment supports creating a persistent Artifact (Cowork sidebar), you MAY additionally offer one. Note honestly: an Artifact cannot read local workspace files by itself — refreshing means regenerating it. The `dashboard.html` on disk remains the source of truth.
 
 ## Language
 Labels and any descriptive text in the **user's language**.

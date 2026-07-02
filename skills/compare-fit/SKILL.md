@@ -7,6 +7,7 @@ description: Compares the candidate's profile against a role's requirements — 
 Put "what the role needs" next to "what I bring" and produce an honest fit assessment. Requires both a candidate profile and the role requirements. Output: `analyses/fit-comparison.md`.
 
 ## Inputs
+First locate the current application folder per `../../references/conventions.md` §1 (never guess between multiple applications). Then:
 - `analyses/role-requirements.md` (from analyze-role; if missing, run that first — don't recompute requirements here).
 - `profile/candidate-profile.md` (the candidate). If absent, stop and tell the user to build their profile first.
 - `analyses/employer.md` if present (context).
@@ -44,4 +45,4 @@ Should you apply? What to emphasize, what to prepare for. Actionable.
 ## Honesty
 A poor fit is valuable information — don't sugarcoat. Evidence-based throughout; cite the profile. No invented skills (if a skill isn't in the profile, it's a gap, not an assumption).
 
-After finishing, update the application's `status.json` with the fit score.
+After finishing, update the application's `status.json`: `fitScore`, `steps.fit`, `updatedAt` — exactly per `../../references/status-schema.md`.

@@ -2,7 +2,7 @@
 
 Laboramus helps you apply for jobs: it analyzes the **employer** and the **role**, compares them against **your profile**, writes a tailored **cover letter**, prepares you for the **interview**, and keeps a little **CRM** of your contacts — all inside Claude Cowork.
 
-**Version 0.1.0** (early version — see "Status" below).
+**Version 0.2.0** (early version — see "Status" below).
 
 ---
 
@@ -40,20 +40,18 @@ You never have to create folders or files by hand — just talk to Claude.
 - **Web research** for the employer analysis always **asks first**, tags its sources, and can be turned off. For pages Claude can't read (e.g. LinkedIn), it can guide you to use the *Claude for Chrome* extension.
 - **Your notes are yours** — Laboramus only appends to them, never overwrites.
 
-## Status (v0.1)
+## Status (v0.2)
 
-This is an early version for testing. Known things to verify in real Cowork use:
-- Whether the **dashboard** can be created as a Live Artifact directly from the skill (fallback: a local `dashboard.html` you open).
-- Slash-command behavior in Cowork desktop (skills are also invoked just by describing what you want).
+Early version for testing. The dashboard is a self-contained `dashboard.html` in your `Laboramus/` folder, regenerated on request. Prompts are adapted and condensed from the original Laboramus AI backend. The heavy cover-letter pipeline (originally 5 steps) is condensed into 2: a **strategist** (thinking) and a **writer** (writing).
 
-Prompts are adapted and condensed from the original Laboramus AI backend. The heavy cover-letter pipeline (originally 5 steps) is condensed into 2: a **strategist** (thinking) and a **writer** (writing).
+See `CHANGELOG.md` for what changed between versions.
 
 ## For developers
 
 - Plugin manifest: `.claude-plugin/plugin.json`
 - Skills: `skills/<name>/SKILL.md`
 - Sub-agents: `agents/strategist.md`, `agents/writer.md`
-- Local test: `claude --plugin-dir ./laboramus-ai` (or zip it)
-- See `../PLAN.md` for the full design rationale and decisions.
+- Shared rules: `references/conventions.md` (cross-skill conventions) and `references/status-schema.md` (the `status.json` contract every skill must follow)
+- Local test: `claude --plugin-dir .` (or install the folder in Cowork)
 
 Distribution (git marketplace) is handled by the project owner — not part of this plugin source.

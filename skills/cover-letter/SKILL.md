@@ -7,6 +7,7 @@ description: Generates a tailored cover letter in two steps — a reviewable str
 Produce a tailored cover letter via two stages, using two sub-agents. The letter is written in the **job posting's language**; the brief and your conversation are in the **user's language**.
 
 ## Prerequisites
+- Locate the current application folder per `../../references/conventions.md` §1.
 - `job-posting.md` and `profile/candidate-profile.md` must exist. If the profile is missing, stop and ask the user to build it (build-profile).
 - Existing `analyses/` (employer, role-requirements, fit-comparison) are used if present, but are NOT required — the strategist short-circuits and derives what it needs from the posting + profile.
 
@@ -20,7 +21,7 @@ Once the user approves, dispatch the **writer** sub-agent. It reads the (possibl
 
 ## After
 - Show the letter. Offer revisions (the user can ask for tone tweaks, shortening, different emphasis — re-run the writer).
-- Update `status.json` (cover-letter done, date).
+- Update `status.json`: `steps.coverLetter`, `updatedAt` — per `../../references/status-schema.md`.
 - Offer interview-prep as a natural next step.
 
 ## Standalone use

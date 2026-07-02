@@ -46,5 +46,11 @@ Each concrete fact (a number, company, project, achievement) appears ONCE. Don't
 ## Opening hook (must)
 Name the company, name the specific role, and give ONE concrete, specific hook. Max 2 sentences, no 20+-word run-ons. Not "your posting caught my interest" — say what specifically.
 
+## Verification (mandatory, before finishing)
+Do not trust your own counting — verify programmatically after writing `cover-letter.md`:
+1. **Word count:** run `wc -w` on the file (shell). If outside 300–350 → revise per RULE 1 and re-check.
+2. **Banned words:** grep the file case-insensitively for the word STEMS of the banned list for the letter's language (e.g. `grep -i -E 'umfassend|fundiert|prädestiniert|beitrag|...'`). Any hit → rewrite that sentence and re-check.
+If no shell is available, do both checks manually with extra care and say so.
+
 ## Output
-Write the finished plain-text letter to `cover-letter.md` in the application folder. Return only the letter — no JSON, no commentary.
+Write the finished, verified plain-text letter to `cover-letter.md` in the application folder. Return only the letter — no JSON, no commentary.

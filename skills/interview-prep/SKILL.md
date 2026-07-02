@@ -7,6 +7,7 @@ description: Creates a personalized interview preparation pack — likely questi
 A leaf step: it consumes existing artifacts and produces `interview-prep.md`. Nothing depends on it. Written in the **user's language**.
 
 ## Inputs (use what exists)
+Locate the current application folder per `../../references/conventions.md` §1. Then use:
 `strategy-brief.md`, `analyses/employer.md`, `analyses/fit-comparison.md`, `analyses/role-requirements.md`, `job-posting.md`, `profile/candidate-profile.md`.
 
 ## Output → `interview-prep.md`

@@ -6,6 +6,9 @@ description: A mini-CRM for an application — record free notes and dated conta
 
 Keep lightweight, user-owned notes per application in `notes.md`. Helps the user remember when they last talked to whom and capture thoughts. Written in the **user's language**.
 
+## Locating the application
+Resolve the current application folder per `../../references/conventions.md` §1.
+
 ## File: `notes.md` (per application)
 Two sections:
 
@@ -30,3 +33,6 @@ Two sections:
 
 ## Date handling
 Use today's date for new entries (ask or infer from context if the user references a different day, e.g. "yesterday").
+
+## Lifecycle side-effect
+If a logged interaction implies a status change ("sent the application", "interview scheduled", "got rejected", "received an offer"), also update `applicationStatus` in the application's `status.json` per `../../references/status-schema.md` — and mention that you did.

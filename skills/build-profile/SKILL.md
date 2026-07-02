@@ -40,6 +40,13 @@ Summarize as descriptive strengths, work style, values, motivation — what the 
 ## Stale-skill flagging
 If a skill's last evidenced use is long ago (e.g. "last used 2012"), add a gentle inline flag: `⚠️ last evidenced 2012 — still current?`. You CANNOT know the user's intent (maybe they're moving away from it), so flag, don't delete.
 
+## Updating an existing profile
+If `candidate-profile.md` already exists (new certificate, updated CV), do NOT rebuild from scratch:
+1. Read the existing profile first — it may contain the user's manual edits, which are authoritative.
+2. Merge in what the new/changed source documents add (new skills, roles, certifications).
+3. Where a new document contradicts an existing entry, ASK the user instead of silently overwriting — their manual edits win by default.
+4. Summarize what changed.
+
 ## User control
 Tell the user this file is **theirs to edit**: they can delete skills they don't want to present, annotate, or correct anything. The file is the editable source of truth — no hidden settings.
 
