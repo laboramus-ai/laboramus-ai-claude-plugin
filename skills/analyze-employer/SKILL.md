@@ -25,7 +25,8 @@ This analysis depends only on the company, not the role — so reuse it across a
 - **Name your sources** at the end of the analysis (audit trail).
 
 ### When a page can't be read (LinkedIn, auth-walled, JS-heavy)
-Tell the user this option exists: the **Claude for Chrome** extension lets you read a page through their own logged-in browser session. Brief setup: install "Claude for Chrome" from the Chrome Web Store (beta, paid plans), pair it with Cowork. Then get **explicit opt-in** before using it. ⚠️ Higher risk: the extension can navigate/click — restrict strictly to *reading* the target page (no clicking through, no forms, no logins/financial actions), keep the same source-discipline rule, user stays supervising.
+1. **Chrome-Browser MCP Connector:** If available, offer to access the page via the Chrome-Browser MCP connector or browser subagent (e.g., `browser_subagent`). This allows navigating to the URL, waiting for page elements, and extracting the content.
+2. **Claude for Chrome Extension:** Tell the user this option exists: the **Claude for Chrome** extension lets you read a page through their own logged-in browser session. Brief setup: install "Claude for Chrome" from the Chrome Web Store (beta, paid plans), pair it with Cowork. Then get **explicit opt-in** before using it. ⚠️ Higher risk: the extension can navigate/click — restrict strictly to *reading* the target page (no clicking through, no forms, no logins/financial actions), keep the same source-discipline rule, user stays supervising.
 
 ### Offline mode
 If the user has disabled web access (or prefers it), use model knowledge only and be honest about uncertainty.

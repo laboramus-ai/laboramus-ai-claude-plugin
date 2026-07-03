@@ -2,7 +2,7 @@
 
 Laboramus helps you apply for jobs: it analyzes the **employer** and the **role**, compares them against **your profile**, writes a tailored **cover letter**, prepares you for the **interview**, and keeps a little **CRM** of your contacts — all inside Claude Cowork.
 
-**Version 0.4.0** (early version — see "Status" below).
+**Version 0.4.1** (early version — see "Status" below).
 
 ---
 
@@ -37,7 +37,7 @@ You never have to create folders or files by hand — just talk to Claude.
 
 - **Languages:** your cover letter is always written in the **language of the job posting**. Everything you read (analyses, strategy, dashboard) is in **your** language.
 - **Personality tests are optional** — most people skip them. The tool is fully useful without one. When provided, they're used only lightly, never as pseudo-scientific "you fit this role because of your type".
-- **Web research** for the employer analysis always **asks first**, tags its sources, and can be turned off. For pages Claude can't read (e.g. LinkedIn), it can guide you to use the *Claude for Chrome* extension.
+- **Web research** for the employer analysis always **asks first**, tags its sources, and can be turned off. For pages Claude can't read (e.g. LinkedIn), it can use a Chrome-Browser MCP connector / browser tool or guide you to use the *Claude for Chrome* extension.
 - **Your notes are yours** — Laboramus only appends to them, never overwrites.
 
 ## Status (v0.4)

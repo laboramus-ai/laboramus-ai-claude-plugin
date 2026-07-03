@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.4.1 — 2026-07-03
+
+Added integration with Chrome-Browser MCP connector for failing URLs.
+
+- **Browser Connector Integration**: Updated `apply` and `analyze-employer` skills to offer and use the Chrome-Browser MCP connector (`browser_subagent`) to fetch LinkedIn and other JS-heavy/blocked job postings.
+- **Documentation**: Updated README to reflect version `0.4.1`.
+
 ## 0.4.0 — 2026-07-03
 
 Added marketplace configuration for direct distribution.
