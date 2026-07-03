@@ -1,0 +1,19 @@
+{
+  "name": "laboramus",
+  "metadata": {
+    "description": "Laboramus AI plugins — job application assistant for Claude Cowork."
+  },
+  "owner": {
+    "name": "Tomi Schütz"
+  },
+  "plugins": [
+    {
+      "name": "laboramus-ai",
+      "source": "./",
+      "description": "AI job-application assistant: analyze the employer and the role, compare them against your profile, generate an authentic cover letter, and prepare for interviews.",
+      "category": "productivity",
+      "license": "MIT",
+      "repository": "https://github.com/slingshot8320/laboramus-ai-claude-plugin"
+    }
+  ]
+}
