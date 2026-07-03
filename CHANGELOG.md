@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.0 — 2026-07-03
+
+Added marketplace configuration for direct distribution.
+
+- **Marketplace Distribution Configuration**: Created `.claude-plugin/marketplace.json` to publish the plugin.
+- **LICENSE**: Added MIT License to the repository root.
+- **Consistent Versioning**: Updated README and documentation to version `0.4.0`.
+
 ## 0.2.0 — 2026-07-02
 
 Structural hardening after the first design review.

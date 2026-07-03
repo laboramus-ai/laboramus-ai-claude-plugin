@@ -2,7 +2,7 @@
 
 Laboramus helps you apply for jobs: it analyzes the **employer** and the **role**, compares them against **your profile**, writes a tailored **cover letter**, prepares you for the **interview**, and keeps a little **CRM** of your contacts — all inside Claude Cowork.
 
-**Version 0.2.0** (early version — see "Status" below).
+**Version 0.4.0** (early version — see "Status" below).
 
 ---
 
@@ -40,7 +40,7 @@ You never have to create folders or files by hand — just talk to Claude.
 - **Web research** for the employer analysis always **asks first**, tags its sources, and can be turned off. For pages Claude can't read (e.g. LinkedIn), it can guide you to use the *Claude for Chrome* extension.
 - **Your notes are yours** — Laboramus only appends to them, never overwrites.
 
-## Status (v0.2)
+## Status (v0.4)
 
 Early version for testing. The dashboard is a self-contained `dashboard.html` in your `Laboramus/` folder, regenerated on request. Prompts are adapted and condensed from the original Laboramus AI backend. The heavy cover-letter pipeline (originally 5 steps) is condensed into 2: a **strategist** (thinking) and a **writer** (writing).
 
@@ -54,4 +54,4 @@ See `CHANGELOG.md` for what changed between versions.
 - Shared rules: `references/conventions.md` (cross-skill conventions) and `references/status-schema.md` (the `status.json` contract every skill must follow)
 - Local test: `claude --plugin-dir .` (or install the folder in Cowork)
 
-Distribution (git marketplace) is handled by the project owner — not part of this plugin source.
+Distribution (git marketplace) is configured in `.claude-plugin/marketplace.json` in this repository.
