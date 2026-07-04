@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.5.2 — 2026-07-04
+
+Integrated door-to-door SBB commute time calculation (OpenData.ch).
+
+- **SBB Commute Calculation**: Integrated automatic door-to-door commute time check during `analyze-employer` step using the Swiss transport OpenData REST API.
+- **Home Address Setting**: Added prompting flow to ask and store the user's home address under `### Preferences` in their candidate profile when first run.
+- **Dashboard Columns**: Added commute duration display column to the main applications table.
+- **Strict Schema Update**: Expanded `status.json` contract to officially document the `"commute"` field.
+
 ## 0.5.1 — 2026-07-04
 
 Refined `/search-jobs` preferences, skill matching, and portal options.

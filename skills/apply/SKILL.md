@@ -31,7 +31,7 @@ Normalize everything to `{ company (name/URL, optional), job-posting text }`.
 If the user is continuing an existing application, locate it per conventions §1. Otherwise create `applications/<YYYY-MM-DD>-<company-slug>-<role-slug>/` (slug + collision rules: conventions §4). Propose the name, let the user override. Initialize `status.json` exactly per the schema (`applicationStatus: "preparing"`, display name like "Acme — Senior Software Architect, Jun 2026"). Write `job-posting.md` and `company.md`.
 
 ## Step 3 — Run what's runnable, in dependency order
-- **analyze-employer** — if a company is known. (Reuses a cached `companies/<slug>/employer.md` if present — see that skill.)
+- **analyze-employer** — if a company is known. (Reuses a cached `companies/<slug>/employer.md` if present — see that skill. Extracts the company address and triggers the door-to-door SBB commute calculation, prompting the user for their home address if it is not yet saved in their profile).
 - **analyze-role** — if a posting is present. Needs no profile.
 - **compare-fit** — only if BOTH role-requirements AND a candidate profile exist. Otherwise tell the user: "Upload a CV / build your profile to unlock the fit comparison."
 - **cover-letter** — offer once a profile + posting exist (it can short-circuit missing analyses).

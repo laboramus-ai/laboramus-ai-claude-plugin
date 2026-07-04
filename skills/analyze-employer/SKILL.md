@@ -31,10 +31,26 @@ This analysis depends only on the company, not the role — so reuse it across a
 ### Offline mode
 If the user has disabled web access (or prefers it), use model knowledge only and be honest about uncertainty.
 
+## Commute Calculation (SBB Door-to-Door)
+1. **Extract Workplace Address:** Find the street address of the company's local office/site during research.
+2. **Retrieve Home Address:** Look at `profile/candidate-profile.md` under `### Preferences`.
+   - **If missing:** Ask the user:
+     "Um deine Pendelzeit zu berechnen: Wie lautet deine Startadresse (Wohnort)? Ich werde sie für zukünftige Berechnungen im Profil speichern."
+     Update `profile/candidate-profile.md` by appending or creating a `### Preferences` section containing:
+     `* **Wohnort / Startadresse:** <address>`
+3. **Calculate Commute Time:** Query the Swiss transport OpenData REST API:
+   `http://transport.opendata.ch/v1/connections?from=<home>&to=<workplace>&limit=3`
+   - Use morning rush hour connections (arrival around 08:30 on next weekday).
+   - Extract: duration (convert to minutes), number of transfers, and route outline (e.g. S-Bahn, Tram, Bus).
+4. **Save Commute Data:**
+   - Update `"commute"` field in the application's `status.json` with a summary (e.g., `"35 Min. (1x Umsteigen)"`).
+   - If the API query fails, set to `"Berechnung fehlgeschlagen"` or leave as `null`.
+
 ## Output: `employer.md`
 Readable Markdown in the **user's language**:
 - **Summary** — what the company does + a culture read (admit honestly if the company is unknown; give a general industry assessment instead of inventing).
 - **Overview** — industry · size · founded · business model/market position.
+- **Commute (Pendelzeit)** — door-to-door commute details (e.g., home to office duration, transfers, main transport types).
 - **Culture** — core values · likely lived work environment (leadership, error culture, team dynamics, work-life balance) · typical benefits.
 - **Pros** / **Cons** — realistic, balanced.
 - **Recommendation** — which personality type it suits; what to watch for; for unknown companies, concrete research steps (Kununu, Glassdoor, LinkedIn, network).

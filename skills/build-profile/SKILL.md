@@ -34,6 +34,9 @@ Degrees, diplomas, certifications with institutions and years.
 
 ### Languages
 
+### Preferences
+* **Wohnort / Startadresse:** [Home/starting address for SBB commute calculations]
+
 ### Personality (only if personality-tests/ has usable results)
 Summarize as descriptive strengths, work style, values, motivation — what the test *states*. Do NOT match it to any role here. If no usable test, omit this section entirely. (A test that's just a CV/other doc → say so, don't invent.)
 
