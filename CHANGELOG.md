@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.5.1 — 2026-07-04
+
+Refined `/search-jobs` preferences, skill matching, and portal options.
+
+- **Search Preferences**: Added portal selector configurations, search filters for what/where parameters.
+- **Skill Verification**: Enabled explicit user verification of extracted skills before search queries are executed.
+- **Search Depth Control**: Added Title-Only (narrow) and Full Description (broad) matching depth options.
+
 ## 0.5.0 — 2026-07-04
 
 Added `/search-jobs` skill to automate and monitor job searches on LinkedIn.
