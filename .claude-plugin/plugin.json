@@ -1,7 +1,7 @@
 {
   "name": "laboramus-ai",
   "description": "AI job-application assistant: analyze the employer and the role, compare them against your profile, generate an authentic cover letter, and prepare for interviews. Built for Claude Cowork.",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "keywords": ["job-application", "cover-letter", "career", "interview-prep", "cowork"],
   "author": {
     "name": "Laboramus AI"

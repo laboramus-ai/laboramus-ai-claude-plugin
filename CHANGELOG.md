@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.5.3 — 2026-07-04
+
+Added dual public transport (SBB) and car (OSRM) commute calculations.
+
+- **Dual Commute System**: Extended `analyze-employer` skill to compute both public transit travel times (via SBB OpenData.ch API) and car driving times (via OSM Nominatim Geocoding and OSRM Routing APIs).
+- **Format Update**: Updated dashboard layout and `status.json` structure to show the commute times as `🚆 <transit> / 🚗 <car>` (e.g. `🚆 35 Min. / 🚗 22 Min.`).
+
 ## 0.5.2 — 2026-07-04
 
 Integrated door-to-door SBB commute time calculation (OpenData.ch).

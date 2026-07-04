@@ -16,7 +16,7 @@ Give the user one place to see everything. **Primary form: a self-contained `das
 ## What to render
 A single page:
 - **Profile** card: status + last update.
-- **Applications** table: display name · company · **applicationStatus** (color-coded) · fit score · commute time (e.g. ⏱️ 35 Min. from SBB calculation) · progress row (employer ✓/—, role ✓/—, fit ✓/—, letter ✓/—, interview ✓/—) · latest contact + next step from notes.
+- **Applications** table: display name · company · **applicationStatus** (color-coded) · fit score · commute times (e.g. 🚆 35 Min. / 🚗 22 Min.) · progress row (employer ✓/—, role ✓/—, fit ✓/—, letter ✓/—, interview ✓/—) · latest contact + next step from notes.
 - Sort by `updatedAt` (newest first); show fit score and status prominently.
 - Per application, list the file names of its artifacts (analyses, strategy brief, cover letter, interview prep, notes) so the user knows what exists and where.
 

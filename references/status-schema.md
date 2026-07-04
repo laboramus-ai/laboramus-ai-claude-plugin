@@ -12,7 +12,7 @@ Every application folder contains a `status.json`. ALL skills that read or write
   "updatedAt": "2026-07-02",
   "applicationStatus": "preparing",
   "fitScore": 7.5,
-  "commute": "35 Min. (1x Umsteigen)",
+  "commute": "🚆 35 Min. / 🚗 22 Min.",
   "steps": {
     "employer": "2026-06-24",
     "role": "2026-06-24",
@@ -31,7 +31,7 @@ Every application folder contains a `status.json`. ALL skills that read or write
   `preparing` → `applied` → `interview` → `offer` | `rejected` | `withdrawn`.
   Starts as `preparing`. Update it when the user reports progress ("I sent it", "they invited me", "got a rejection").
 - **fitScore** (number 1–10, one decimal) or `null` if compare-fit hasn't run.
-- **commute** (string) or `null` — door-to-door commute duration and connection summary (e.g. "35 Min. (1x Umsteigen)"). Calculated in employer step.
+- **commute** (string) or `null` — door-to-door commute duration summary for both public transit and car (e.g. "🚆 35 Min. / 🚗 22 Min."). Calculated in employer step.
 - **steps** (object) — one key per pipeline step: `employer`, `role`, `fit`, `coverLetter`, `interviewPrep`. Value = ISO date the step completed, or `null` if not done. No other keys.
 
 ## Writing rules

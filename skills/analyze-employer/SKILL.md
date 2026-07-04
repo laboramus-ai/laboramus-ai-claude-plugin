@@ -31,20 +31,30 @@ This analysis depends only on the company, not the role — so reuse it across a
 ### Offline mode
 If the user has disabled web access (or prefers it), use model knowledge only and be honest about uncertainty.
 
-## Commute Calculation (SBB Door-to-Door)
+## Commute Calculation (SBB Public Transit & Car Driving)
 1. **Extract Workplace Address:** Find the street address of the company's local office/site during research.
 2. **Retrieve Home Address:** Look at `profile/candidate-profile.md` under `### Preferences`.
    - **If missing:** Ask the user:
      "Um deine Pendelzeit zu berechnen: Wie lautet deine Startadresse (Wohnort)? Ich werde sie für zukünftige Berechnungen im Profil speichern."
      Update `profile/candidate-profile.md` by appending or creating a `### Preferences` section containing:
      `* **Wohnort / Startadresse:** <address>`
-3. **Calculate Commute Time:** Query the Swiss transport OpenData REST API:
+3. **Calculate Public Transit Commute:** Query the Swiss transport OpenData REST API:
    `http://transport.opendata.ch/v1/connections?from=<home>&to=<workplace>&limit=3`
    - Use morning rush hour connections (arrival around 08:30 on next weekday).
-   - Extract: duration (convert to minutes), number of transfers, and route outline (e.g. S-Bahn, Tram, Bus).
-4. **Save Commute Data:**
-   - Update `"commute"` field in the application's `status.json` with a summary (e.g., `"35 Min. (1x Umsteigen)"`).
-   - If the API query fails, set to `"Berechnung fehlgeschlagen"` or leave as `null`.
+   - Extract: duration (convert to minutes) and number of transfers.
+4. **Calculate Driving Commute:**
+   - **Geocode Addresses:** Query the OpenStreetMap Nominatim API for both home and workplace addresses:
+     `https://nominatim.openstreetmap.org/search?q=<address>&format=json&limit=1`
+     Extract `[lat, lon]` coordinates.
+   - **Route Driving Time:** Query the OSRM Routing API using the coordinates (Note: format is `longitude,latitude` order):
+     `http://router.project-osrm.org/route/v1/driving/{home_lon},{home_lat};{work_lon},{work_lat}?overview=false`
+     Extract `duration` (convert from seconds to minutes) and `distance` (convert from meters to kilometers).
+5. **Save Commute Data:**
+   - Update `"commute"` field in the application's `status.json` with a dual summary:
+     `"🚆 <transit_min> Min. / 🚗 <car_min> Min."`
+     (e.g., `"🚆 35 Min. / 🚗 22 Min."`).
+   - Write connection details and route distance in the `analyses/employer.md` report.
+   - If a calculation fails, set its part to `—` (e.g., `"🚆 35 Min. / 🚗 —"`). If all fail, set to `"Berechnung fehlgeschlagen"`.
 
 ## Output: `employer.md`
 Readable Markdown in the **user's language**:
