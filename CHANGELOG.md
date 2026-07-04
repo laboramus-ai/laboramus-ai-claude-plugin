@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.5.0 — 2026-07-04
+
+Added `/search-jobs` skill to automate and monitor job searches on LinkedIn.
+
+- **Job Search Skill**: Created new skill `skills/search-jobs/SKILL.md` to analyze candidates' profile, define named search profiles, construct LinkedIn job search queries, and run them via Chrome browser MCP connector.
+- **Job Leads Tracker**: Defined a JSON tracking database (`search-profiles.json` and `job-search-tracker.json`) to persist preferences and monitor search status.
+- **Workflow Linkage**: Integrated job leads with application pipeline initialization.
+
 ## 0.4.1 — 2026-07-03
 
 Added integration with Chrome-Browser MCP connector for failing URLs.

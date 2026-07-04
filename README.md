@@ -2,7 +2,7 @@
 
 Laboramus helps you apply for jobs: it analyzes the **employer** and the **role**, compares them against **your profile**, writes a tailored **cover letter**, prepares you for the **interview**, and keeps a little **CRM** of your contacts — all inside Claude Cowork.
 
-**Version 0.4.1** (early version — see "Status" below).
+**Version 0.5.0** (early version — see "Status" below).
 
 ---
 
@@ -20,6 +20,7 @@ Laboramus helps you apply for jobs: it analyzes the **employer** and the **role*
 | **interview-prep** | A personalized interview prep pack. |
 | **notes** | A mini-CRM: log who you talked to and when. |
 | **dashboard** | An overview of all your applications in one place. |
+| **search-jobs** | Searches for matching jobs on LinkedIn using candidate profile & Chrome browser. |
 
 ## How to use it (non-technical)
 
@@ -40,7 +41,7 @@ You never have to create folders or files by hand — just talk to Claude.
 - **Web research** for the employer analysis always **asks first**, tags its sources, and can be turned off. For pages Claude can't read (e.g. LinkedIn), it can use a Chrome-Browser MCP connector / browser tool or guide you to use the *Claude for Chrome* extension.
 - **Your notes are yours** — Laboramus only appends to them, never overwrites.
 
-## Status (v0.4)
+## Status (v0.5)
 
 Early version for testing. The dashboard is a self-contained `dashboard.html` in your `Laboramus/` folder, regenerated on request. Prompts are adapted and condensed from the original Laboramus AI backend. The heavy cover-letter pipeline (originally 5 steps) is condensed into 2: a **strategist** (thinking) and a **writer** (writing).
 
