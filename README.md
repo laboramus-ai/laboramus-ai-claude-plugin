@@ -85,6 +85,11 @@ Early version for testing. The dashboard is a self-contained `dashboard.html` in
 
 See `CHANGELOG.md` for what changed between versions.
 
+## Feedback & Support
+
+Found a bug or have a feature request? Since this is an open-source project, all support is handled publicly via GitHub Issues. 
+Please create a new issue here: **[Laboramus AI Issues](https://github.com/laboramus-ai/laboramus-ai-claude-plugin/issues)**.
+
 ## Privacy & Disclaimer (Datenschutz & Haftungsausschluss)
 
 ⚠️ **Important Notice Regarding Your Data & Privacy**
