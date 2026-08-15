@@ -8,6 +8,29 @@ Laboramus helps you apply for jobs: it analyzes the **employer** and the **role*
 
 ---
 
+## Installation & Updates
+
+Since Laboramus AI is an open-source project, you can easily install it directly from this GitHub repository into your Claude Cowork or Claude Code environment.
+
+### In Claude Cowork (Desktop App)
+1. Open the **Settings** (Zahnrad-Symbol) and navigate to **Plugins**.
+2. Click on **Hinzufügen** (Add) and select **Marketplace hinzufügen**.
+3. Choose **Aus einem Repository hinzufügen**.
+4. Enter the following URL into the text field:
+   `https://github.com/laboramus-ai/laboramus-ai-claude-plugin`
+5. Click **Synchronisieren**.
+
+**Updates:** Claude Cowork will automatically track the "Last updated" date. You can update the plugin through the internal Claude mechanism whenever a new version is released.
+
+### In Claude Code (CLI)
+You can install the plugin directly into your global Gemini config directory:
+```bash
+git clone https://github.com/laboramus-ai/laboramus-ai-claude-plugin.git ~/.gemini/config/plugins/laboramus-ai
+```
+**Updates:** To update, simply navigate to that folder and run `git pull`.
+
+---
+
 ## Use Cases & Skills Overview
 
 Laboramus AI is built around distinct workflows (Use Cases), which are powered by specific underlying tools (Skills). You don't need to call skills manually — you just state your goal, and Claude orchestrates the right skills for the job.
