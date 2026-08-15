@@ -62,6 +62,15 @@ Early version for testing. The dashboard is a self-contained `dashboard.html` in
 
 See `CHANGELOG.md` for what changed between versions.
 
+## Privacy & Disclaimer (Datenschutz & Haftungsausschluss)
+
+⚠️ **Important Notice Regarding Your Data & Privacy**
+
+- **Your Data Stays With You:** Laboramus AI operates entirely within your local Claude Cowork environment. As the provider of this plugin, **we have absolutely zero access to your data, your CVs, your application documents, or your Claude.ai account.** All information is stored locally on your machine and processed directly through your personal interaction with Anthropic's Claude. 
+- **Personal Responsibility:** Job applications involve highly sensitive personal data. You are solely and completely responsible for how you handle, store, and share this information. By using this plugin, you acknowledge that you process your personal data at your own risk.
+- **Swiss Data Protection Act (DSG) & Global Use:** While this plugin is optimized for the Swiss market and aligns with the transparency principles of the revised Swiss Federal Act on Data Protection (FADP / revDSG), the plugin itself does not collect, process centrally, or transmit any data to us. Furthermore, since this tool can technically be downloaded and used globally, we have no control over—and accept no responsibility for—its usage or compliance with other local data protection laws (such as the GDPR).
+- **No Liability:** This plugin is provided "as is" without any warranties. The use of this tool is entirely at your own risk. The provider of Laboramus AI explicitly rejects any and all liability for data breaches, data loss, application outcomes, or any direct or indirect damages arising from the use of this plugin.
+
 ## For developers
 
 - Plugin manifest: `.claude-plugin/plugin.json`
