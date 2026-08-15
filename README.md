@@ -6,33 +6,46 @@ Laboramus helps you apply for jobs: it analyzes the **employer** and the **role*
 
 ---
 
-## What it does
+## Use Cases & Skills Overview
 
-| Skill | What it does |
-|-------|--------------|
-| **apply** | The main entry point — just say "help me apply for this job". It figures out the rest. |
-| **init** | Sets up your workspace folders (once). |
-| **build-profile** | Turns your CV / certificates / diplomas into a reusable profile. |
-| **analyze-employer** | Researches the company: culture, values, pros & cons. |
-| **analyze-role** | Extracts what the job requires (works even without your CV). |
-| **compare-fit** | Compares the role's requirements against your profile: matches, gaps, fit score. |
-| **cover-letter** | Writes a tailored cover letter — first a strategy you can review, then the letter. |
-| **interview-prep** | A personalized interview prep pack. |
-| **notes** | A mini-CRM: log who you talked to and when. |
-| **dashboard** | An overview of all your applications in one place. |
-| **search-jobs** | Searches for matching jobs on LinkedIn using candidate profile & Chrome browser. |
+Laboramus AI is built around distinct workflows (Use Cases), which are powered by specific underlying tools (Skills). You don't need to call skills manually — you just state your goal, and Claude orchestrates the right skills for the job.
 
-## How to use it (non-technical)
+### 1. Profiling: Building your digital twin
+Before applying, Claude needs to know who you are.
+- **How to use:** Say *"Set up my workspace"*, drop your CV into the created folder, and say *"Build my profile"*.
+- **Skills applied:**
+  - `init`: Sets up your workspace directory structure.
+  - `build-profile`: Analyzes your CV, extracts your hard skills, and structures them into a reusable candidate profile. It also asks for your home address for future commute calculations.
 
-1. **Install** the plugin (your administrator/distributor will tell you how — typically `/plugin install laboramus-ai` from a marketplace).
-2. In Claude Cowork, create or open a **Project** folder for your job search.
-3. Say **"set up Laboramus"** → it creates the folders.
-4. Put your **CV** (and any work certificates / diplomas) into `Laboramus/profile/source-documents/`, then say **"build my profile"**.
-5. For each job: say **"help me apply"** and either paste the job posting text or give the URL.
-6. Review the **strategy** it shows you, tweak anything, then ask it to **write the cover letter**.
-7. Ask for **interview prep**, **log contacts** as you talk to people, and open the **dashboard** anytime for an overview.
+### 2. Job Search: Finding the right positions
+Search for matching jobs actively based on your profile's skills without leaving the chat.
+- **How to use:** Say *"Search for jobs for me"*.
+- **Skills applied:**
+  - `search-jobs`: Configures a search profile (e.g., location, title vs. full description) and uses a Chrome-Browser MCP connector to autonomously navigate LinkedIn. It evaluates listings against your profile and logs promising hits into your tracking list.
 
-You never have to create folders or files by hand — just talk to Claude.
+### 3. Application Orchestration: From Job Ad to Cover Letter
+When you find a job you want to apply for, Claude handles the entire deep-dive analysis, fit scoring, and writing process.
+- **How to use:** Say *"Help me apply for this job"* and provide the job URL or text.
+- **Skills applied (orchestrated by the `apply` skill):**
+  - `analyze-employer`: Researches the company's culture and business model. **Bonus:** Automatically calculates the door-to-door commute time (both Public Transit via SBB OpenData and Car via OSRM) from your home address.
+  - `analyze-role`: Extracts the true requirements, must-haves, and nice-to-haves from the job posting.
+  - `compare-fit`: Matches your profile against the role analysis to highlight strengths, identify gaps, and generate a fit score.
+  - `cover-letter`: Drafts a tailored cover letter strategy for your review, and then writes the final, highly authentic letter.
+
+### 4. Interview Preparation
+Once invited, you need to prepare for the specific challenges of this role and company.
+- **How to use:** Say *"Prepare me for the interview at [Company]"*.
+- **Skills applied:**
+  - `interview-prep`: Generates a personalized interview strategy based on your previously calculated fit gaps and the employer's culture.
+
+### 5. Application Management & CRM
+Keep track of all your ongoing applications and interactions.
+- **How to use:** Say *"Show my dashboard"* or *"Log a note that I called the recruiter today"*.
+- **Skills applied:**
+  - `dashboard`: Generates a self-contained, color-coded HTML dashboard showing all your applications, their status, fit scores, and commute times.
+  - `notes`: A mini-CRM that logs your interactions (calls, emails) for specific applications so you always know what the next step is.
+
+---
 
 ## Good to know
 
