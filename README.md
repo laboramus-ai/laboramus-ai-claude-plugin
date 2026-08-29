@@ -2,7 +2,7 @@
 
 Laboramus helps you apply for jobs: it analyzes the **employer** and the **role**, compares them against **your profile**, writes a tailored **cover letter**, prepares you for the **interview**, and keeps a little **CRM** of your contacts — all inside Claude Cowork.
 
-**Version 0.5.3** (early version — see "Status" below).
+**Version 0.6.0** (early version — see "Status" below).
 
 > 🇨🇭 **Note:** Laboramus AI is currently optimized for the Swiss job market (including integrated door-to-door commute calculations via the Swiss Federal Railways SBB, and local application conventions).
 
