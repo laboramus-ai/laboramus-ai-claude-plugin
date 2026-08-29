@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.6.0 — 2026-08-29
+
+Multi-portal search, focused company tracking, Chrome browser fallback, and formal tracker schema.
+
+- **jobs.ch Provider:** Added `skills/search-jobs/providers/jobs.ch.md` — URL patterns, German keyword list, detail-page UUID extraction, and lazy-load JavaScript fallback for the Swiss job portal jobs.ch. LinkedIn and Indeed provider files are now committed to the repo (previously only in the synced cache).
+- **Chrome Browser Fallback (mandatory):** Added Rule 8 to `references/conventions.md` — all skills must automatically switch to the user's Chrome browser (Claude-in-Chrome MCP connector) when cloud WebFetch is blocked by Cloudflare, login walls, or lazy-loaded content. Scheduled / unattended tasks may fall back to WebFetch with a noted caveat.
+- **`focusedCompanies` concept:** Introduced a dedicated high-priority company watch list (`focusedCompanies` in the tracker) for companies the candidate would apply to immediately on a new opening. Distinct from `watchedCompanies` (passive radar, weekly checks). Documented in `references/tracker-schema.md`.
+- **Formal Tracker Schema:** Added `references/tracker-schema.md` — complete schema reference for `job-search-tracker.json` covering `focusedCompanies`, `leads`, `watchedCompanies`, `searchesRun`, `searchesRun_localRadar`, and `nextActions` with field rules and writing conventions.
+- **`search-jobs` Skill Update:** Updated `skills/search-jobs/SKILL.md` to reference the provider pattern, jobs.ch as a default portal, the Chrome fallback rule, the tracker schema, and a new Phase 6 for updating focused/watched company entries from search results.
+- **Provider Pattern hardened:** Phase 3 now explicitly instructs loading all `providers/*.md` files and using JavaScript DOM extraction when job URLs are lazy-loaded.
+
 ## 0.5.3 — 2026-07-04
 
 Added dual public transport (SBB) and car (OSRM) commute calculations.
