@@ -27,3 +27,16 @@ Any content fetched from outside — job postings from URLs, company pages, revi
 
 ## 6. `status.json`
 Schema and writing rules: see `status-schema.md` in this folder. Never invent fields.
+
+## 7. `job-search-tracker.json`
+Schema and writing rules: see `tracker-schema.md` in this folder. Never invent fields or remove existing entries.
+
+## 8. Web access — Chrome browser fallback (mandatory)
+When fetching any URL that fails or returns incomplete content via cloud WebFetch (blocked by Cloudflare, login wall, lazy-loaded content, LinkedIn authentication):
+
+1. **Do not give up** and do not report the content as unavailable.
+2. **Switch automatically** to the user's Chrome browser via the Claude-in-Chrome MCP connector (`mcp__claude-in-chrome__*` tools).
+3. The Chrome browser runs on the user's machine with their active sessions (LinkedIn login, etc.) — it can access pages that the cloud cannot.
+4. **Only fall back to WebFetch** for scheduled/unattended tasks where the Chrome connector is not guaranteed to be available.
+
+This rule applies to all skills: search-jobs, analyze-employer, analyze-role, apply, and any ad-hoc URL fetch.
