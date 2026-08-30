@@ -79,7 +79,7 @@ Keep track of all your ongoing applications and interactions.
 - **Web research** for the employer analysis always **asks first**, tags its sources, and can be turned off. For pages Claude can't read (e.g. LinkedIn), it can use a Chrome-Browser MCP connector / browser tool or guide you to use the *Claude for Chrome* extension.
 - **Your notes are yours** — Laboramus only appends to them, never overwrites.
 
-## Status (v0.5)
+## Status (v0.6)
 
 Early version for testing. The dashboard is a self-contained `dashboard.html` in your `Laboramus/` folder, regenerated on request. Prompts are adapted and condensed from the original Laboramus AI backend. The heavy cover-letter pipeline (originally 5 steps) is condensed into 2: a **strategist** (thinking) and a **writer** (writing).
 
