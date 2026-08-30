@@ -6,6 +6,7 @@
   <title>Laboramus AI | Open-Source Job Application Assistant</title>
   <meta name="description" content="An open-source AI job application assistant for Claude Cowork. Automate your job search, employer analysis, and cover letter writing." />
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 </head>
 <body>
   <div class="container">
@@ -22,6 +23,37 @@
         Laboramus AI is an open-source plugin built for Claude Cowork. It acts as your personal digital twin and career strategist, turning generic CVs into highly targeted, authentic job applications.
       </p>
       <a href="https://github.com/laboramus-ai/laboramus-ai-claude-plugin" class="btn">View on GitHub</a>
+    </section>
+
+    <section class="content-section">
+      <h2>How it works (The User Journey)</h2>
+      <p>Laboramus AI makes your job search structured, analytical, and highly personalized. Here is what the process looks like:</p>
+      
+      <div class="legend" style="margin-bottom: 20px; font-size: 0.9em; display: flex; gap: 15px; justify-content: center;">
+        <span style="display: flex; align-items: center; gap: 5px;"><span style="display: inline-block; width: 15px; height: 15px; background: #4a90e2; border-radius: 3px;"></span> You</span>
+        <span style="display: flex; align-items: center; gap: 5px;"><span style="display: inline-block; width: 15px; height: 15px; background: #f1c40f; border-radius: 3px;"></span> Claude AI</span>
+        <span style="display: flex; align-items: center; gap: 5px;"><span style="display: inline-block; width: 15px; height: 15px; background: #2ecc71; border-radius: 3px;"></span> Result</span>
+      </div>
+
+      <div class="mermaid-container">
+        <div class="mermaid">
+flowchart TD
+    %% Styling
+    classDef userAction fill:#4a90e2,stroke:#333,stroke-width:2px,color:white,rx:10,ry:10;
+    classDef claudeMagic fill:#f1c40f,stroke:#333,stroke-width:2px,rx:10,ry:10;
+    classDef result fill:#2ecc71,stroke:#333,stroke-width:2px,color:white,rx:10,ry:10;
+    
+    A["👤 1. Dein Profil erstellen<br/>(Einfach CV in den Chat ziehen)"]:::userAction --> B["✨ Claude analysiert deine Hard Skills"]:::claudeMagic
+    
+    B --> C["🔍 2. Jobsuche<br/>(Claude sucht autonom oder du gibst einen Link)"]:::userAction
+    
+    C --> D["📊 3. Die knallharte Analyse<br/>(Skill-Match, SBB-Pendelzeiten & Firmen-Reputation)"]:::claudeMagic
+    
+    D --> E["🎯 4. Deine Bewerbung<br/>(Massgeschneidertes Anschreiben mit einem Klick)"]:::result
+    
+    E --> F["🤝 5. Interview-Vorbereitung<br/>(Personalisierte Strategie für das Gespräch)"]:::result
+        </div>
+      </div>
     </section>
 
     <section class="content-section">
@@ -42,6 +74,39 @@
         <div class="feature-item">
           <h3>Tailored Cover Letters</h3>
           <p>Generates authentic cover letters based on a calculated fit score between your profile and the role.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>100% Local-First & Data Sovereignty</h2>
+      
+      <div class="privacy-box" style="background-color: #fff3cd; color: #856404; border: 1px solid #ffeeba; padding: 15px; border-radius: 8px; margin-bottom: 25px;">
+        <strong>🔒 Your data stays with you!</strong><br/>
+        Laboramus AI operates entirely locally on your machine. All generated data, CVs, and notes are saved exclusively in your local workspace folder. There is no cloud database and no tracking. You are in full control and decide exactly what information you share with Anthropic (Claude) or other AI providers. The responsibility for your sensitive application data lies completely with you.
+      </div>
+
+      <p>This is what the completely local <code>Laboramus/</code> directory structure looks like on your machine:</p>
+      
+      <div class="mermaid-container">
+        <div class="mermaid">
+graph LR
+    classDef root fill:#4a90e2,stroke:#333,stroke-width:2px,color:white;
+    classDef folder fill:#f1c40f,stroke:#333,stroke-width:1px;
+    classDef file fill:#ecf0f1,stroke:#333,stroke-width:1px;
+
+    R[Laboramus/]:::root --> P[profile/]:::folder
+    P --> P1[candidate-profile.md]:::file
+    
+    R --> C[companies/]:::folder
+    C --> C1[&lt; company-slug &gt;/]:::folder
+    C1 --> C2[employer.md]:::file
+    
+    R --> A[applications/]:::folder
+    A --> A1[&lt; date-company-role &gt;/]:::folder
+    A1 --> A2[status.json]:::file
+    A1 --> A3[job-posting.md]:::file
+    A1 --> A4[cover-letter.md]:::file
         </div>
       </div>
     </section>
