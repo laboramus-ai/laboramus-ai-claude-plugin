@@ -212,3 +212,77 @@ code {
 .mermaid {
   text-align: center;
 }
+
+/* Custom User Journey Timeline */
+.journey-timeline {
+  position: relative;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 10px 0;
+}
+.journey-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 20px;
+  width: 4px;
+  background: #e9ecef;
+  border-radius: 2px;
+}
+.timeline-step {
+  position: relative;
+  margin-bottom: 30px;
+  padding-left: 60px;
+}
+.timeline-step:last-child {
+  margin-bottom: 0;
+}
+.timeline-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 44px;
+  height: 44px;
+  background: white;
+  border: 3px solid #ccc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  z-index: 1;
+}
+.timeline-step.you .timeline-icon { border-color: #4a90e2; }
+.timeline-step.claude .timeline-icon { border-color: #f1c40f; }
+.timeline-step.result .timeline-icon { border-color: #2ecc71; }
+
+.timeline-content {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  border: 1px solid #f1f3f5;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.timeline-content:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+.timeline-content h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 1.1em;
+  color: #2c3e50;
+}
+.timeline-content p {
+  margin: 0;
+  color: #5c6bc0;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+@media (max-width: 600px) {
+  .journey-timeline::before { left: 15px; }
+  .timeline-icon { width: 34px; height: 34px; left: 0; font-size: 16px; border-width: 2px; }
+  .timeline-step { padding-left: 50px; }
+}

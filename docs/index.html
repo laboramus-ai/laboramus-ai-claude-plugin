@@ -29,29 +29,41 @@
       <h2>How it works (The User Journey)</h2>
       <p>Laboramus AI makes your job search structured, analytical, and highly personalized. Here is what the process looks like:</p>
       
-      <div class="legend" style="margin-bottom: 20px; font-size: 0.9em; display: flex; gap: 15px; justify-content: center;">
-        <span style="display: flex; align-items: center; gap: 5px;"><span style="display: inline-block; width: 15px; height: 15px; background: #4a90e2; border-radius: 3px;"></span> You</span>
-        <span style="display: flex; align-items: center; gap: 5px;"><span style="display: inline-block; width: 15px; height: 15px; background: #f1c40f; border-radius: 3px;"></span> Claude AI</span>
-        <span style="display: flex; align-items: center; gap: 5px;"><span style="display: inline-block; width: 15px; height: 15px; background: #2ecc71; border-radius: 3px;"></span> Result</span>
-      </div>
-
-      <div class="mermaid-container">
-        <div class="mermaid">
-flowchart TD
-    %% Styling
-    classDef userAction fill:#4a90e2,stroke:#333,stroke-width:2px,color:white,rx:10,ry:10;
-    classDef claudeMagic fill:#f1c40f,stroke:#333,stroke-width:2px,rx:10,ry:10;
-    classDef result fill:#2ecc71,stroke:#333,stroke-width:2px,color:white,rx:10,ry:10;
-    
-    A["👤 1. Dein Profil erstellen<br/>(Einfach CV in den Chat ziehen)"]:::userAction --> B["✨ Claude analysiert deine Hard Skills"]:::claudeMagic
-    
-    B --> C["🔍 2. Jobsuche<br/>(Claude sucht autonom oder du gibst einen Link)"]:::userAction
-    
-    C --> D["📊 3. Die knallharte Analyse<br/>(Skill-Match, SBB-Pendelzeiten & Firmen-Reputation)"]:::claudeMagic
-    
-    D --> E["🎯 4. Deine Bewerbung<br/>(Massgeschneidertes Anschreiben mit einem Klick)"]:::result
-    
-    E --> F["🤝 5. Interview-Vorbereitung<br/>(Personalisierte Strategie für das Gespräch)"]:::result
+      <div class="journey-timeline">
+        <div class="timeline-step you">
+          <div class="timeline-icon">👤</div>
+          <div class="timeline-content">
+            <h3>1. Build Your Profile</h3>
+            <p>Simply drop your CV into the chat. Claude extracts your hard skills to build a reusable digital twin.</p>
+          </div>
+        </div>
+        <div class="timeline-step claude">
+          <div class="timeline-icon">🔍</div>
+          <div class="timeline-content">
+            <h3>2. Discover Jobs</h3>
+            <p>Let Claude autonomously scrape job portals or just paste a link to a role you found.</p>
+          </div>
+        </div>
+        <div class="timeline-step claude">
+          <div class="timeline-icon">📊</div>
+          <div class="timeline-content">
+            <h3>3. Hard-Fact Analysis</h3>
+            <p>Claude calculates your precise skill match, door-to-door commute times (SBB & Car), and spots red flags in employer reviews.</p>
+          </div>
+        </div>
+        <div class="timeline-step result">
+          <div class="timeline-icon">🎯</div>
+          <div class="timeline-content">
+            <h3>4. Tailored Application</h3>
+            <p>Generate a highly personalized, authentic cover letter perfectly aligned with the role.</p>
+          </div>
+        </div>
+        <div class="timeline-step result">
+          <div class="timeline-icon">🤝</div>
+          <div class="timeline-content">
+            <h3>5. Interview Strategy</h3>
+            <p>Get a customized preparation sheet and negotiation strategy for your upcoming interview.</p>
+          </div>
         </div>
       </div>
     </section>
